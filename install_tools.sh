@@ -5,9 +5,9 @@
 brew update
 brew tap caskroom/cask
 
+brew install git
 brew install bash-git-prompt
-#brew cask install visual-studio-code
 
-
+brew cask install visual-studio-code
 
 brew cleanup       
