@@ -1,5 +1,5 @@
-iOS Scripts
+OSX Scripts
 ===========
 
 
-Some scripts to help with iOS setup and dev on Macs
+Some scripts to help with setting up Mac OSX for development
