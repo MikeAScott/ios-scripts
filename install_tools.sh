@@ -5,8 +5,12 @@
 brew update
 brew tap homebrew/cask-cask
 
+# Git
 brew install git
 brew install bash-git-prompt
+
+git config --global user.name "Mike Scott"
+git config --global user.email "mike.scott@nttdata.com"
 
 brew cask install visual-studio-code
 
