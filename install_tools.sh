@@ -41,5 +41,11 @@ brew install terraform
 pip3 install awscli
 brew install azure-cli
 
+# Docker, Virtual Box & Vagrant
+brew cask install docker
+brew cask install virtualbox
+brew cask install vagrant
+#brew cask install vagrant-manager
+
 # Tidy up
 brew cleanup       
