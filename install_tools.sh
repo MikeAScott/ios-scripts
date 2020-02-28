@@ -34,6 +34,11 @@ pip3 install ansible paramiko boto3 botocore molecule
 # DotNet Dev
 brew cask install dotnet-sdk
 
+# Java JDK
+brew install java
+echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.bash_profile
+echo 'export CPPFLAGS="-I/usr/local/opt/openjdk/include"' >> ~/.bash_profile
+
 # Terraform
 brew install terraform
 
@@ -46,6 +51,11 @@ brew cask install docker
 brew cask install virtualbox
 brew cask install vagrant
 #brew cask install vagrant-manager
+
+# Puppet PDK
+# brew cask install puppetlabs/puppet/pdk
+
+
 
 # Tidy up
 brew cleanup       
