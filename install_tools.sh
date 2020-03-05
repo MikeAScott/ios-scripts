@@ -36,8 +36,19 @@ brew cask install dotnet-sdk
 
 # Java JDK
 brew install java
-echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.bash_profile
-echo 'export CPPFLAGS="-I/usr/local/opt/openjdk/include"' >> ~/.bash_profile
+JDK_PATH=/usr/local/opt/openjdk
+echo "export JAVA_HOME='$JDK_PATH''" >> ~/.bash_profile
+echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bash_profile
+echo 'export CPPFLAGS="-I$JAVA_HOME/include"' >> ~/.bash_profile
+brew install maven
+
+# Eclipse
+brew cask install eclipse-java
+ECLIPSE_INI='/Applications/Eclipse Java.app/Contents/Eclipse/eclipse.ini'
+JDK_PATH = '/usr/local/opt/openjdk'
+echo '-vm' >> "$ECLIPSE_INI"
+echo "$JDK_PATH/bin" >> "$ECLIPSE_INI"
+
 
 # Terraform
 brew install terraform
