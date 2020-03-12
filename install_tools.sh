@@ -12,6 +12,7 @@ brew install bash-git-prompt
 git config --global user.name "Mike Scott"
 git config --global user.email "mike.scott@nttdata.com"
 
+# VS Code
 brew cask install visual-studio-code
 
 # Dev tools
@@ -41,6 +42,7 @@ echo "export JAVA_HOME='$JDK_PATH''" >> ~/.bash_profile
 echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bash_profile
 echo 'export CPPFLAGS="-I$JAVA_HOME/include"' >> ~/.bash_profile
 brew install maven
+brew install ant
 
 # Eclipse
 brew cask install eclipse-java
@@ -48,6 +50,9 @@ ECLIPSE_INI='/Applications/Eclipse Java.app/Contents/Eclipse/eclipse.ini'
 JDK_PATH = '/usr/local/opt/openjdk'
 echo '-vm' >> "$ECLIPSE_INI"
 echo "$JDK_PATH/bin" >> "$ECLIPSE_INI"
+
+# Node
+brew install node
 
 
 # Terraform
