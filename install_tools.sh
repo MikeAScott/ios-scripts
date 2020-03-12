@@ -71,7 +71,8 @@ brew cask install vagrant
 # Puppet PDK
 # brew cask install puppetlabs/puppet/pdk
 
-
+# Powershell
+brew cask install powershell
 
 # Tidy up
 brew cleanup       
