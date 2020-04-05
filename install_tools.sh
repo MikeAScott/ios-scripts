@@ -5,6 +5,9 @@
 brew update
 brew tap homebrew/cask-cask
 
+# tree
+brew install tree
+
 # Git
 brew install git
 brew install bash-git-prompt
@@ -24,6 +27,9 @@ rbenv init
 echo 'eval "$(rbenv init - )"' >> ~/.bash_profile
 
 rbenv install 2.6.5
+rbenv global 2.6.5
+
+gem install bundler
 
 # Python3 Pip3 & Virtualenv
 brew install python
@@ -36,24 +42,29 @@ pip3 install ansible paramiko boto3 botocore molecule
 brew cask install dotnet-sdk
 
 # Java JDK
-brew install java
-JDK_PATH=/usr/local/opt/openjdk
-echo "export JAVA_HOME='$JDK_PATH''" >> ~/.bash_profile
-echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bash_profile
-echo 'export CPPFLAGS="-I$JAVA_HOME/include"' >> ~/.bash_profile
+brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk8
+echo "jdk() {
+        version=\$1
+        export JAVA_HOME=$(/usr/libexec/java_home -v\"\$version\");
+        export PATH=\"\$JAVA_HOME/bin:\$PATH\"
+        export CPPFLAGS=\"-I\$JAVA_HOME/include\"
+        java -version
+ }
+jdk 1.8
+" >> ~./bash_profile
 brew install maven
 brew install ant
 
 # Eclipse
-brew cask install eclipse-java
-ECLIPSE_INI='/Applications/Eclipse Java.app/Contents/Eclipse/eclipse.ini'
-JDK_PATH = '/usr/local/opt/openjdk'
-echo '-vm' >> "$ECLIPSE_INI"
-echo "$JDK_PATH/bin" >> "$ECLIPSE_INI"
+# brew cask install eclipse-java
+# ECLIPSE_INI='/Applications/Eclipse Java.app/Contents/Eclipse/eclipse.ini'
+# JDK_PATH = $(/usr/libexec/java_home -v 1.8)
+# echo '-vm' >> "$ECLIPSE_INI"
+# echo "$JDK_PATH/bin" >> "$ECLIPSE_INI"
 
 # Node
 brew install node
-
 
 # Terraform
 brew install terraform
